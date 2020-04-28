@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Circles animation</title>
+        <style>
+            circle {
+                display: none;
+            }
+
+            li {
+                display: inline-block;
+                text-decoration: none;
+            }
+        </style>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script>
+            var i = 0;
+            var y = 10;
+            var x = 0;
+            var max = 56; /* NÚMERO TOTAL DE CÍRCULOS */
+
+            setInterval(function () {
+                $("." + i).fadeIn(150); /* TEMPO DE APARIÇÃO DOS CÍRCULOS */
+                if (i < max)
+                    i++;
+            }, 100); /* INTERVALO ENTRE AS APARIÇÕES */
+
+            $().ready(function () {
+
+                /* ATRIBUTOS DE ESTILO */
+                $('circle').attr("r", '0.7');
+                $('circle').attr("fill", 'rgba(255,255,255,0.5)');
+                $('circle').attr("stroke", 'black');
+                $('circle').attr("stroke-width", '0.1');
+                /**/
+                                    
+                for (var i2 = 0; i2 < max; i2++) {
+
+                    x++;
+
+                    /*       NÚMERO DE CÍRCULOS POR LINHA       */
+                    /*       |                                  */
+                    /*      \ /                                 */
+                    if (i2 % 14 == 0 && i2 != 0) {
+                        x = 1;
+                        y += 8; /* DISTÂNCIA ENTRE OS CÍRCULOS (Y) */
+                    }
+
+                    /*         DISTÂNCIA ENTRE OS CÍRCULOS (X)      */
+                    /*                         |                    */
+                    /*                        \ /                   */
+                    $('.' + i2).attr('cx', x * 8);
+                    $('.' + i2).attr('cy', y);
+                }
+
+                $('.' + max).css('display','none');
+            })
+        </script>
+    </head>
+
+    <body>
+        <svg viewBox="0 0 120 120" version="1.1" xmlns="http://www.w3.org/2000/svg">
+            <circle class="circle 0"></circle>
+            <circle class="circle 1"></circle>
+            <circle class="circle 2"></circle>
+            <circle class="circle 3"></circle>
+            <circle class="circle 4"></circle>
+            <circle class="circle 5"></circle>
+            <circle class="circle 6"></circle>
+            <circle class="circle 7"></circle>
+            <circle class="circle 8"></circle>
+            <circle class="circle 9"></circle>
+            <circle class="circle 10"></circle>
+            <circle class="circle 11"></circle>
+            <circle class="circle 12"></circle>
+            <circle class="circle 13"></circle>
+            <circle class="circle 14"></circle>
+            <circle class="circle 15"></circle>
+            <circle class="circle 16"></circle>
+            <circle class="circle 17"></circle>
+            <circle class="circle 18"></circle>
+            <circle class="circle 19"></circle>
+            <circle class="circle 20"></circle>
+            <circle class="circle 21"></circle>
+            <circle class="circle 22"></circle>
+            <circle class="circle 23"></circle>
+            <circle class="circle 24"></circle>
+            <circle class="circle 25"></circle>
+            <circle class="circle 26"></circle>
+            <circle class="circle 27"></circle>
+            <circle class="circle 28"></circle>
+            <circle class="circle 29"></circle>
+            <circle class="circle 30"></circle>
+            <circle class="circle 31"></circle>
+            <circle class="circle 32"></circle>
+            <circle class="circle 33"></circle>
+            <circle class="circle 34"></circle>
+            <circle class="circle 35"></circle>
+            <circle class="circle 36"></circle>
+            <circle class="circle 37"></circle>
+            <circle class="circle 38"></circle>
+            <circle class="circle 39"></circle>
+            <circle class="circle 40"></circle>
+            <circle class="circle 41"></circle>
+            <circle class="circle 42"></circle>
+            <circle class="circle 43"></circle>
+            <circle class="circle 44"></circle>
+            <circle class="circle 45"></circle>
+            <circle class="circle 46"></circle>
+            <circle class="circle 47"></circle>
+            <circle class="circle 48"></circle>
+            <circle class="circle 49"></circle>
+            <circle class="circle 50"></circle>
+            <circle class="circle 51"></circle>
+            <circle class="circle 52"></circle>
+            <circle class="circle 53"></circle>
+            <circle class="circle 54"></circle>
+            <circle class="circle 55"></circle>
+        </svg>
+    </body>
+</html>
